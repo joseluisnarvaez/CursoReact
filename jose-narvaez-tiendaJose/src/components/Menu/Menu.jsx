@@ -12,9 +12,9 @@ function Menu() {
           <Container>
             <Navbar.Brand href="#home">Ecommerces</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link href="#home">Momis 1 </Nav.Link>
+              <Nav.Link href="#features">Momis 2</Nav.Link>
+              <Nav.Link href="#pricing">Momis 3</Nav.Link>
             </Nav>
             <CartWidget />
           </Container>

@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <Menu />
-    <ItemListContainer saludo="Bienvenido a la tienda de Jose" />
+    <ItemListContainer saludo="Bienvenido a la tienda Momis" />
     </>
   )
 }
