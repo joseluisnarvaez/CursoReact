@@ -1,12 +1,12 @@
 import './App.css'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
-import NavBar from './components/menu/navbar.jsx'
+import Menu from './components/Menu/Menu.jsx'
 
 function App() {
 
   return (
     <>
-    <NavBar />
+    <Menu />
     <ItemListContainer saludo="Bienvenido a la tienda de Jose" />
     </>
   )
