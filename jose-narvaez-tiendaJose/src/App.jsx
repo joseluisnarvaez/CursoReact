@@ -1,5 +1,5 @@
 import './App.css'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer2.jsx'
 import Menu from './components/Menu/Menu.jsx'
 
 function App() {
