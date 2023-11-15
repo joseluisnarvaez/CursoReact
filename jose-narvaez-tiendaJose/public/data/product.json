@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0595/9915/9452/files/01_tipos_de_gorras_con_estructura.jpg?v=1677898928",
+      "name": "Producto 1",
+      "price": 19.99,
+      "stock": 10,
+      "description": "Descripción del Producto 1"
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0595/9915/9452/files/01_tipos_de_gorras_con_estructura.jpg?v=1677898928",
+      "name": "Producto 2",
+      "price": 29.99,
+      "stock": 15,
+      "description": "Descripción del Producto 2"
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0595/9915/9452/files/01_tipos_de_gorras_con_estructura.jpg?v=1677898928",
+      "name": "Producto 3",
+      "price": 39.99,
+      "stock": 8,
+      "description": "Descripción del Producto 3"
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0595/9915/9452/files/01_tipos_de_gorras_con_estructura.jpg?v=1677898928",
+      "name": "Producto 4",
+      "price": 49.99,
+      "stock": 20,
+      "description": "Descripción del Producto 4"
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0595/9915/9452/files/01_tipos_de_gorras_con_estructura.jpg?v=1677898928",
+      "name": "Producto 5",
+      "price": 59.99,
+      "stock": 12,
+      "description": "Descripción del Producto 5"
+    }
+  ]
+  
