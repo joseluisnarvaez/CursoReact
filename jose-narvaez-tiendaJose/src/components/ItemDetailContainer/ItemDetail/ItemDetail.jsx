@@ -1,12 +1,13 @@
-import {Container} from 'react-bootstrap/Container';
-import {Row } from 'react-bootstrap/Row';
-import {Col} from 'react-bootstrap/Col';
-import {Image} from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
 import { ItemCounter } from '../ItemCounter';
 import { useCartContext } from '../../Context/CartContext';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+
 
 
 export const ItemDetail = ({producto}) => {
