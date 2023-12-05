@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import { Alert as BootstrapAlert } from 'react-bootstrap';
 
 export const Alert = ({ mensaje, diseño , showAlert, setShowAlert}) => {

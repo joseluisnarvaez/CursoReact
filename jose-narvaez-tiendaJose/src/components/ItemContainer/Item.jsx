@@ -1,4 +1,4 @@
-import Card from 'react-bootstrap/Card';
+import {Card } from 'react-bootstrap/Card';
 import { NavLink } from 'react-router-dom';
 export const Item = ({product}) => {
     

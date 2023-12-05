@@ -1,5 +1,5 @@
 import { Item } from './Item';
-import CardGroup from 'react-bootstrap/esm/CardGroup';
+import {CardGroup} from 'react-bootstrap/esm/CardGroup';
 
 const ItemContainer = ({productos}) => {
 

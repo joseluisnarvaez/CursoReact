@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
