@@ -1,5 +1,5 @@
 import { useCounter } from "../hook/useCounter"
-import Button from 'react-bootstrap/Button';
+import { Button } from 'react-bootstrap';
 
 
 export const ItemCounter = ({inicial = 1, stock = 5 , onAdd}) => {

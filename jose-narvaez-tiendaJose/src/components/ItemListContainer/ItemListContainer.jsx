@@ -1,5 +1,4 @@
-import { useEffect} from "react";
-import { useState } from "react";
+import { useEffect, useState} from "react";
 import ItemContainer from "../ItemContainer/ItemContainer";
 import { getData, getDataByCategoria } from "../../fuctions/MFetch";
 import { useParams } from "react-router-dom";

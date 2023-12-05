@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { useCartContext } from '../Context/CartContext'
-import Table from "react-bootstrap/Table";
+import {Table, Button} from "react-bootstrap";
 import { saveOrder } from '../../fuctions/FirebasesConf';
-import Button from 'react-bootstrap/esm/Button';
 import { Alert } from '../Alerts/AlertConft';
 
 export const Cart = () => {
