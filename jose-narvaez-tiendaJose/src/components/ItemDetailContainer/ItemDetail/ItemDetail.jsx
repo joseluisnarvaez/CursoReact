@@ -25,6 +25,8 @@ export const ItemDetail = ({producto}) => {
       <br />
       <br />
       <br />
+
+
       <Container>
         <Row>
           <Col xs={6} md={4}>

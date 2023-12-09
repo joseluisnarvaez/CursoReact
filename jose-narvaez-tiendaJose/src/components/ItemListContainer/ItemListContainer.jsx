@@ -2,6 +2,7 @@ import { useEffect, useState} from "react";
 import ItemContainer from "../ItemContainer/ItemContainer";
 import { getData, getDataByCategoria } from "../../fuctions/MFetch";
 import { useParams } from "react-router-dom";
+import { Loading } from "../Loading/Loading";
 
 const ItemListContainer = ({saludo}) => {
  const [ productos, setProductos ] = useState([])
@@ -11,7 +12,6 @@ const ItemListContainer = ({saludo}) => {
     useEffect(()=>{
         if(cid){
             getDataByCategoria(cid)
-            
             .then(res => {
                 setProductos(res);
               })
@@ -32,7 +32,7 @@ const ItemListContainer = ({saludo}) => {
            <div>
             <h2 className="text-center">{ saludo }</h2>
             {
-                loading ? <h2 className="text-center"> Cargando.....</h2>:
+                loading ? <Loading/> :
                 <ItemContainer productos={productos}/>
             }
             

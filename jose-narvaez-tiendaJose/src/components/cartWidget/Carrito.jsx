@@ -8,7 +8,7 @@ const CartWidget = () => {
     return (
         <Button variant="primary"  style={{ backgroundColor: '#f0c040' }}>
           <Link to='/carrito'>
-            {totalProductos}
+            {totalProductos !== 0 && totalProductos}
             <FaShoppingCart  />
           </Link>
           

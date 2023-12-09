@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useCartContext } from '../Context/CartContext'
-import {Table, Button} from "react-bootstrap";
+import {Table, Button, Container, Row, Col} from "react-bootstrap";
 import { saveOrder } from '../../fuctions/FirebasesConf';
 import { Alert } from '../Alerts/AlertConft';
+import { Link } from 'react-router-dom';
 
 export const Cart = () => {
 
@@ -10,19 +11,58 @@ export const Cart = () => {
     const [showAlert, setShowAlert] = useState(false);
     const [alertVariant, setAlertVariant] = useState('success');
     const [alertMessage, setAlertMessage] = useState('');
+    const [formDatos, setFormDatos] = useState({
+      name: '',
+      phone: '',
+      email: '',
+  }); 
+  const handleInputChange = (event) => {
 
+    if(event.target.name === 'repetirEmail'){
+      if(event.target.value !== formDatos.email){
+        setAlertVariant('danger');
+        setAlertMessage('Los email no coinciden');
+        setShowAlert(true);
+      }
+  }
+    setFormDatos({
+      ...formDatos,
+      [event.target.name]: event.target.value,
+    });
+    
+}
 
-    const handlerOrder =() => {
+  const validarFormulario = () => {
+    const { name, phone, email, repetirEmail } = formDatos;
+
+    if (!name || !phone || !email )  {
+      setAlertVariant('danger');
+      setAlertMessage('Por favor, complete todos los campos.');
+      setShowAlert(true);
+      return false;
+    }
+    if (email !== repetirEmail) {
+      setAlertVariant('danger');
+      setAlertMessage('Los correos electrónicos no coinciden.');
+      setShowAlert(true);
+      return false;
+    }
+    return true;
+  };
+    const handlerOrder = async (event) => {
+      if(!validarFormulario()){ return}
+      console.log(formDatos)
+        event.preventDefault()
         const order = {}
-        order.buyer = {name : 'Jose' , phone: '12345678', email : 'jnarvaez@gmail.com'}
+        order.buyer = formDatos
         order.item = cartList.map(({id, name,price}) =>  ({id,name,price}))
         order.total = totalCarrito
         console.log(order)
         saveOrder(order).then((order) => {
-             vaciarCarrito()
+              vaciarCarrito()
               console.log(order)
               setAlertVariant('success');
-              setAlertMessage('¡Compra realizada con éxito!');
+              setAlertMessage(`¡Compra realizada con éxito! ID de la compra es: ${order.id}`);
               setShowAlert(true);
             }).catch((error) => console.error(error))
        
@@ -70,8 +110,54 @@ console.log(cartList)
        
     </tbody>
   </Table>
-  <Button variant="primary" size="sm" onClick={handlerVaciarCarrito}>Vaciar Carrito</Button>
-   <Button variant="primary" size="sm" onClick={handlerOrder}>Comprar</Button>
+  <Container>
+  {totalCarrito !== 0 && 
+   <Row>
+        <Col>Precio Total:</Col>
+        <Col>{totalCarrito}</Col>
+  </Row>}
+  </Container>  
+  
+    
+   {totalCarrito === 0? (
+        <div>
+          <Link to='/'><Button >Seguir Comprando</Button></Link>
+        </div>
+      ) : (     <div> 
+          <Button variant="primary" size="sm" onClick={handlerVaciarCarrito}>Vaciar Carrito</Button>
+          
+        </div>
+        )
+      }
+            
+       <Container>
+        {totalCarrito !== 0 && 
+        <form >
+          <Row>
+          <Col><label>Nombre</label></Col>
+          <Col><input type="text" placeholder="Nombre" name='name' value={formDatos.name}  onChange={handleInputChange} /></Col>
+          </Row>
+          
+          <Row>
+          <Col><label>telefono</label></Col>
+          <Col><input type="text" placeholder="telefono" name='phone'  value={formDatos.phone}   onChange={handleInputChange} /></Col>
+          </Row>
+          <Row>
+          <Col><label>email</label></Col>
+          <Col> <input type="text" placeholder="email" name='email'  value={formDatos.email}   onChange={handleInputChange} /></Col>
+          </Row>
+          <Row>
+          <Col><label>Repetir email</label></Col>
+          <Col><input type="text" placeholder="Repetir email" name='repetirEmail'    onChange={handleInputChange} /></Col>
+          </Row>
+          <Row>
+          <Col><Button variant="primary" size="sm" onClick={handlerOrder}> Terminar compra</Button></Col>
+          </Row>
+          </form>
+            }
+        </Container>
+        
+                
    </>
   )
 }
